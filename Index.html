@@ -1,0 +1,172 @@
+<script type = "text/javascript">
+         function validate() {
+         if( document.forms["myForm"]["firstname"].value == "" ) {
+          document.getElementById('validationMsg').innerHTML = "First Name cannot be empty";
+          document.getElementById('validationMsg').style.color = "red";
+            // document.myForm.Name.focus() ;
+            return false;
+         }
+         else if( document.forms["myForm"]["lastname"].value == "" ) {
+            document.getElementById('validationMsg').innerHTML = "Last Name cannot be empty";
+            document.getElementById('validationMsg').style.color = "red";
+            // document.myForm.Name.focus() ;
+            return false;
+         }
+         else if( document.forms["myForm"]["email"].value == "" ) {
+            document.getElementById('validationMsg').innerHTML = "Email Address cannot be empty";
+            document.getElementById('validationMsg').style.color = "red";
+            // document.myForm.Name.focus() ;
+            return false;
+         }
+         else if( document.forms["myForm"]["notes"].value == "" ) {
+            document.getElementById('validationMsg').innerHTML = "Notes cannot be empty";
+            document.getElementById('validationMsg').style.color = "red";
+            // document.myForm.Name.focus() ;
+            return false;
+         } 
+         else
+         {
+          document.getElementById('validationMsg').innerHTML = "Validation successful";
+          document.getElementById('validationMsg').style.color = "green";
+          return false;
+     }
+          
+
+         return true;
+      }
+
+      </script>  
+
+  <style type="text/css">
+    * {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text]{
+  width: 49%;
+  margin: 5px 10px 20px 0;
+  /*display: inline-block;*/
+  border: 2px solid #C0C0C0;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Add padding to container elements */
+.container {
+  text-align: center;
+  width:430;
+  height:400;
+  fill="rgb(255, 236, 215)"
+  padding: 16px;
+  background-color: #ffe5b4;
+  border:3px solid #006ce5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+  
+}
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .registrationbtn {
+    width: 100%;
+  }
+}
+.registrationbtn {
+color: rgb(255, 255, 255); 
+font-family: Helvetica, Arial, sans-serif; 
+font-size: 16px; 
+font-style: normal; 
+font-weight: 400; 
+letter-spacing: 0px; 
+width: 90px; height: 30px; 
+background-color: #006ce5;
+display: block;
+margin-left: 160px;
+border-radius: 8px;
+
+
+}
+label{  
+  color: rgb(12, 89, 207); 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: 18px; 
+  font-style: normal; 
+  font-weight: 100; 
+  letter-spacing: 0px; 
+  text-align: right; 
+  width: auto; height: auto;
+  margin: 10px;
+}
+.validationMsg{
+visibility: visible;
+color: red;
+font-family: Helvetica, Arial, sans-serif; 
+  font-size: 15px;
+  margin-bottom: 5px;
+
+}
+.forNotes{
+  color: rgb(12, 89, 207); 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-size: 18px; 
+  font-style: normal; 
+  font-weight: 400;   
+  margin-right: 200px;
+  /*margin-bottom: 10px; */
+  width: 10px; 
+}
+.textareaSty{
+  width: 210; 
+  height:80;
+  margin-left: 100px;
+  margin-bottom: 40px; 
+  border: 2px solid #C0C0C0; 
+  margin-top: -20px;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+  </style>
+  <form name="myForm" onsubmit="return validate()" method="post" >
+  <div class="container">
+    <div style="margin-top: 60px">
+      <div style="margin-top: 15px;">
+          <label for="firstname" >First Name</label>
+          <input type="text" placeholder="First name" name="firstname">
+      </div>
+      <div>
+          <label for="lastname">Last Name</label>
+          <input type="text" placeholder="Last name" name="lastname">
+      </div>
+      <div style="margin-right: 25px; width:-15px">
+          <label  for="emailaddress">Email Address</label>
+          <input style="width: 208px;height: 22px; " type="text" placeholder="Email Address" name="email">
+      </div>
+      <div>
+          <label class="forNotes" for="notes">Notes</label> 
+          <textarea class="textareaSty" name="notes"></textarea>         
+      </div>           
+     
+    <div class="clearfix" >
+      <button type="register" class="registrationbtn" onsubmit = "return(validate());">Register</button>
+    </div>
+    <p>
+          <label class="validationMsg" id="validationMsg" ></label>
+      </p>
+    
+    </div>
+  </div>
+</form>
